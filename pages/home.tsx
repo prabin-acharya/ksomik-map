@@ -1,4 +1,5 @@
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
+import { useMemo } from "react";
 
 
 export default function Home() {
@@ -12,10 +13,12 @@ export default function Home() {
 }
 
 function Map() {
+  const center = useMemo(() => ({ lat: 44, lng: -80 }), [])
+
   return (
     <GoogleMap
       zoom={10}
-      center={{ lat: 44, lng: -80 }}
+      center={center}
       mapContainerStyle={{ height: "100vh", width: "100%" }}
     >
     </GoogleMap>
