@@ -9,6 +9,8 @@ export type Todo = {
   text: string;
   completed: boolean;
   sort: number;
+
+  urgent?: boolean;
 };
 
 export type TodoUpdate = Partial<Todo> & Pick<Todo, "id">;
